@@ -54,9 +54,9 @@ showSuggestions = (examples, input, adapter, name) ->
   if suggestions.length
     suggestions = suggestions.sort (a, b) -> a.distance - b.distance
     messages = """
-    Could not find command '#{input.text}'.
+    Uhh, I don\'t quite understand '#{input.text}'.
     Maybe you meant #{(suggestions[0..2].map (s) -> s.command.replace /hubot/, name).join(' or ')}.
-    Run `#{name} help` for more commands.
+    Type `#{name} help` to learn more.
     """
     adapter.send input.user, messages
 
